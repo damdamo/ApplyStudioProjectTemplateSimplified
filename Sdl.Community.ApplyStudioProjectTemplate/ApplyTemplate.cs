@@ -50,9 +50,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 	        FileTypes = GetApplyTemplateOptions(sourceXml, "ftts");
 	        MatchRepairSettings = GetApplyTemplateOptions(sourceXml, "mrs");
 	        VerificationSpecificLanguages = GetApplyTemplateOptions(sourceXml, "vsl");
-			AnalysisBatchTask = GetApplyTemplateOptions(sourceXml, "aabt");
-			PreTranslateBatchTask = GetApplyTemplateOptions(sourceXml, "ptbt");
-		}
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplyTemplate"/> class.
@@ -81,8 +79,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
             FileTypes = ApplyTemplateOptions.Keep;
 			MatchRepairSettings = ApplyTemplateOptions.Keep;
 			VerificationSpecificLanguages = ApplyTemplateOptions.Keep;
-			AnalysisBatchTask= ApplyTemplateOptions.Keep;
-			PreTranslateBatchTask= ApplyTemplateOptions.Keep;
+
 		}
 
         /// <summary>
@@ -264,35 +261,14 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
             get;
             set;
         }
-		/// <summary>
-		/// Gets or sets the behavior for automation analysis batch task.
-		/// </summary>
-		/// <value>
-		/// The terminology databases behavior.
-		/// </value>
-		public ApplyTemplateOptions AnalysisBatchTask
-		{
-			get;
-			set;
-		}
-		/// <summary>
-		/// Gets or sets the behavior for automation pre translate batch task.
-		/// </summary>
-		/// <value>
-		/// The terminology databases behavior.
-		/// </value>
-		public ApplyTemplateOptions PreTranslateBatchTask
-		{
-			get;
-			set;
-		}
-		/// <summary>
-		/// Gets or sets the verification QA Checker 3.0 behavior.
-		/// </summary>
-		/// <value>
-		/// The verification QA Checker 3.0 behavior.
-		/// </value>
-		public ApplyTemplateOptions VerificationQaChecker30
+
+        /// <summary>
+        /// Gets or sets the verification QA Checker 3.0 behavior.
+        /// </summary>
+        /// <value>
+        /// The verification QA Checker 3.0 behavior.
+        /// </value>
+        public ApplyTemplateOptions VerificationQaChecker30
         {
             get;
             set;
@@ -382,12 +358,12 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
         {
             return Name;
         }
-		
-		/// <summary>
-		/// Writes the XML.
-		/// </summary>
-		/// <param name="writer">The XML writer.</param>
-		public void WriteXml(XmlWriter writer)
+
+        /// <summary>
+        /// Writes the XML.
+        /// </summary>
+        /// <param name="writer">The XML writer.</param>
+        public void WriteXml(XmlWriter writer)
         {
             writer.WriteStartElement("template");
             writer.WriteAttributeString("name", Name);
@@ -410,9 +386,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
             writer.WriteAttributeString("ftts", FileTypes.ToString());
 			writer.WriteAttributeString("mrs",MatchRepairSettings.ToString());
 			writer.WriteAttributeString("vsl", VerificationSpecificLanguages.ToString());
-			writer.WriteAttributeString("aabt", AnalysisBatchTask.ToString());
-			writer.WriteAttributeString("ptbt", PreTranslateBatchTask.ToString());
-			writer.WriteEndElement();
+            writer.WriteEndElement();
         }
 
         /// <summary>
