@@ -673,5 +673,10 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 				CheckChanged();
 			}
 		}
-	}
+
+        private void ApplyToLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
