@@ -33,6 +33,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 		public ApplyTemplateForm(ProjectsController controller)
 		{
 			InitializeComponent();
+			this.Size = new System.Drawing.Size(625, 180);
 			LoadProjectTemplates(controller);
 		}
 
@@ -288,10 +289,10 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 		{
 			if (SelectedTemplate.SelectedItem is ApplyTemplate applyTemplate)
 			{
-				applyTemplate.TranslationProvidersAllLanguages =
-					(ApplyTemplateOptions)Enum.Parse(typeof(ApplyTemplateOptions),
-						TranslationProvidersAllLanguages.SelectedItem.ToString());
-			}
+                applyTemplate.TranslationProvidersAllLanguages =
+                    (ApplyTemplateOptions)Enum.Parse(typeof(ApplyTemplateOptions),
+                        TranslationProvidersAllLanguages.SelectedItem.ToString());
+            }
 			CheckChanged();
 		}
 
@@ -678,5 +679,17 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
         {
 
         }
+
+        private void showSettings_CheckedChanged(object sender, EventArgs e)
+        {
+			if (this.ShowSettings.Checked)
+			{
+				this.Size = new System.Drawing.Size(625, 603);
+			}
+			else
+			{
+				this.Size = new System.Drawing.Size(625, 180);
+			}
+		}
     }
 }

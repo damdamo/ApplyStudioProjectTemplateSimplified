@@ -82,6 +82,7 @@
             this.TranslationQualityAssessmentLabel = new System.Windows.Forms.Label();
             this.matchRepairGroupBox = new System.Windows.Forms.GroupBox();
             this.matchRepLabel = new System.Windows.Forms.Label();
+            this.ShowSettings = new System.Windows.Forms.CheckBox();
             this.TranslationProvidersGroup.SuspendLayout();
             this.TranslationMemoriesGroup.SuspendLayout();
             this.TerminologyGroup.SuspendLayout();
@@ -99,7 +100,7 @@
             this.TranslationProvidersGroup.Controls.Add(this.TranslationProviderAllLanguagesLabel);
             this.TranslationProvidersGroup.Controls.Add(this.TranslationProvidersAllLanguages);
             this.TranslationProvidersGroup.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.TranslationProvidersGroup.Location = new System.Drawing.Point(12, 105);
+            this.TranslationProvidersGroup.Location = new System.Drawing.Point(12, 140);
             this.TranslationProvidersGroup.Name = "TranslationProvidersGroup";
             this.TranslationProvidersGroup.Size = new System.Drawing.Size(285, 84);
             this.TranslationProvidersGroup.TabIndex = 1;
@@ -120,6 +121,7 @@
             // TranslationProvidersSpecificLanguages
             // 
             this.TranslationProvidersSpecificLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TranslationProvidersSpecificLanguages.Enabled = false;
             this.TranslationProvidersSpecificLanguages.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TranslationProvidersSpecificLanguages.FormattingEnabled = true;
             this.TranslationProvidersSpecificLanguages.Items.AddRange(new object[] {
@@ -151,6 +153,7 @@
             // TranslationProvidersAllLanguages
             // 
             this.TranslationProvidersAllLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TranslationProvidersAllLanguages.Enabled = false;
             this.TranslationProvidersAllLanguages.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TranslationProvidersAllLanguages.FormattingEnabled = true;
             this.TranslationProvidersAllLanguages.Items.AddRange(new object[] {
@@ -175,7 +178,7 @@
             this.TranslationMemoriesGroup.Controls.Add(this.TranslationMemoriesAllLanguagesLabel);
             this.TranslationMemoriesGroup.Controls.Add(this.TranslationMemoriesAllLanguages);
             this.TranslationMemoriesGroup.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.TranslationMemoriesGroup.Location = new System.Drawing.Point(12, 195);
+            this.TranslationMemoriesGroup.Location = new System.Drawing.Point(12, 230);
             this.TranslationMemoriesGroup.Name = "TranslationMemoriesGroup";
             this.TranslationMemoriesGroup.Size = new System.Drawing.Size(285, 84);
             this.TranslationMemoriesGroup.TabIndex = 2;
@@ -196,6 +199,7 @@
             // TranslationMemoriesSpecificLanguages
             // 
             this.TranslationMemoriesSpecificLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TranslationMemoriesSpecificLanguages.Enabled = false;
             this.TranslationMemoriesSpecificLanguages.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TranslationMemoriesSpecificLanguages.FormattingEnabled = true;
             this.TranslationMemoriesSpecificLanguages.Items.AddRange(new object[] {
@@ -226,6 +230,7 @@
             // TranslationMemoriesAllLanguages
             // 
             this.TranslationMemoriesAllLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TranslationMemoriesAllLanguages.Enabled = false;
             this.TranslationMemoriesAllLanguages.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TranslationMemoriesAllLanguages.FormattingEnabled = true;
             this.TranslationMemoriesAllLanguages.Items.AddRange(new object[] {
@@ -249,7 +254,7 @@
             this.TerminologyGroup.Controls.Add(this.TerminologyTermbasesLabel);
             this.TerminologyGroup.Controls.Add(this.TerminologyTermbases);
             this.TerminologyGroup.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.TerminologyGroup.Location = new System.Drawing.Point(12, 285);
+            this.TerminologyGroup.Location = new System.Drawing.Point(12, 320);
             this.TerminologyGroup.Name = "TerminologyGroup";
             this.TerminologyGroup.Size = new System.Drawing.Size(285, 84);
             this.TerminologyGroup.TabIndex = 3;
@@ -270,6 +275,7 @@
             // TerminologySearchSettings
             // 
             this.TerminologySearchSettings.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TerminologySearchSettings.Enabled = false;
             this.TerminologySearchSettings.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TerminologySearchSettings.FormattingEnabled = true;
             this.TerminologySearchSettings.Items.AddRange(new object[] {
@@ -299,6 +305,7 @@
             // TerminologyTermbases
             // 
             this.TerminologyTermbases.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TerminologyTermbases.Enabled = false;
             this.TerminologyTermbases.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TerminologyTermbases.FormattingEnabled = true;
             this.TerminologyTermbases.Items.AddRange(new object[] {
@@ -324,7 +331,7 @@
             this.BatchProcessingGroup.Controls.Add(this.BatchTasksAllLanguagesLabel);
             this.BatchProcessingGroup.Controls.Add(this.BatchTasksAllLanguages);
             this.BatchProcessingGroup.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.BatchProcessingGroup.Location = new System.Drawing.Point(303, 105);
+            this.BatchProcessingGroup.Location = new System.Drawing.Point(303, 140);
             this.BatchProcessingGroup.Name = "BatchProcessingGroup";
             this.BatchProcessingGroup.Size = new System.Drawing.Size(285, 174);
             this.BatchProcessingGroup.TabIndex = 5;
@@ -356,6 +363,7 @@
             // FileTypes
             // 
             this.FileTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FileTypes.Enabled = false;
             this.FileTypes.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FileTypes.FormattingEnabled = true;
             this.FileTypes.Items.AddRange(new object[] {
@@ -374,6 +382,7 @@
             // BatchTasksSpecificLanguages
             // 
             this.BatchTasksSpecificLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BatchTasksSpecificLanguages.Enabled = false;
             this.BatchTasksSpecificLanguages.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BatchTasksSpecificLanguages.FormattingEnabled = true;
             this.BatchTasksSpecificLanguages.Items.AddRange(new object[] {
@@ -404,6 +413,7 @@
             // BatchTasksAllLanguages
             // 
             this.BatchTasksAllLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BatchTasksAllLanguages.Enabled = false;
             this.BatchTasksAllLanguages.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BatchTasksAllLanguages.FormattingEnabled = true;
             this.BatchTasksAllLanguages.Items.AddRange(new object[] {
@@ -435,7 +445,7 @@
             this.VerificationGroup.Controls.Add(this.VerificationQaChecker30Label);
             this.VerificationGroup.Controls.Add(this.VerificationQaChecker30);
             this.VerificationGroup.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.VerificationGroup.Location = new System.Drawing.Point(303, 285);
+            this.VerificationGroup.Location = new System.Drawing.Point(303, 320);
             this.VerificationGroup.Name = "VerificationGroup";
             this.VerificationGroup.Size = new System.Drawing.Size(285, 210);
             this.VerificationGroup.TabIndex = 6;
@@ -445,6 +455,7 @@
             // VerificationSpecificLanguages
             // 
             this.VerificationSpecificLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VerificationSpecificLanguages.Enabled = false;
             this.VerificationSpecificLanguages.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VerificationSpecificLanguages.FormattingEnabled = true;
             this.VerificationSpecificLanguages.Items.AddRange(new object[] {
@@ -485,6 +496,7 @@
             // VerificationGrammarChecker
             // 
             this.VerificationGrammarChecker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VerificationGrammarChecker.Enabled = false;
             this.VerificationGrammarChecker.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VerificationGrammarChecker.FormattingEnabled = true;
             this.VerificationGrammarChecker.Items.AddRange(new object[] {
@@ -515,6 +527,7 @@
             // VerificationNumberVerifier
             // 
             this.VerificationNumberVerifier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VerificationNumberVerifier.Enabled = false;
             this.VerificationNumberVerifier.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VerificationNumberVerifier.FormattingEnabled = true;
             this.VerificationNumberVerifier.Items.AddRange(new object[] {
@@ -545,6 +558,7 @@
             // VerificationTagVerifier
             // 
             this.VerificationTagVerifier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VerificationTagVerifier.Enabled = false;
             this.VerificationTagVerifier.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VerificationTagVerifier.FormattingEnabled = true;
             this.VerificationTagVerifier.Items.AddRange(new object[] {
@@ -574,6 +588,7 @@
             // VerificationTerminologyVerifier
             // 
             this.VerificationTerminologyVerifier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VerificationTerminologyVerifier.Enabled = false;
             this.VerificationTerminologyVerifier.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VerificationTerminologyVerifier.FormattingEnabled = true;
             this.VerificationTerminologyVerifier.Items.AddRange(new object[] {
@@ -603,6 +618,7 @@
             // VerificationQaChecker30
             // 
             this.VerificationQaChecker30.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VerificationQaChecker30.Enabled = false;
             this.VerificationQaChecker30.ForeColor = System.Drawing.SystemColors.ControlText;
             this.VerificationQaChecker30.FormattingEnabled = true;
             this.VerificationQaChecker30.Items.AddRange(new object[] {
@@ -650,15 +666,19 @@
             // 
             // TemplateGroup
             // 
+            this.TemplateGroup.Controls.Add(this.ShowSettings);
             this.TemplateGroup.Controls.Add(this.SelectedTemplateLabel);
             this.TemplateGroup.Controls.Add(this.ApplyToLabel);
             this.TemplateGroup.Controls.Add(this.SelectedTemplate);
+            this.TemplateGroup.Controls.Add(this.AboutButton);
             this.TemplateGroup.Controls.Add(this.ApplyTo);
+            this.TemplateGroup.Controls.Add(this.DismissButton);
+            this.TemplateGroup.Controls.Add(this.OkButton);
             this.TemplateGroup.Controls.Add(this.EditTemplatesButton);
             this.TemplateGroup.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.TemplateGroup.Location = new System.Drawing.Point(12, 12);
             this.TemplateGroup.Name = "TemplateGroup";
-            this.TemplateGroup.Size = new System.Drawing.Size(576, 87);
+            this.TemplateGroup.Size = new System.Drawing.Size(576, 122);
             this.TemplateGroup.TabIndex = 0;
             this.TemplateGroup.TabStop = false;
             this.TemplateGroup.Text = "Template to apply";
@@ -709,7 +729,7 @@
             // DismissButton
             // 
             this.DismissButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.DismissButton.Location = new System.Drawing.Point(506, 502);
+            this.DismissButton.Location = new System.Drawing.Point(483, 92);
             this.DismissButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DismissButton.Name = "DismissButton";
             this.DismissButton.Size = new System.Drawing.Size(82, 23);
@@ -720,7 +740,7 @@
             // OkButton
             // 
             this.OkButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.OkButton.Location = new System.Drawing.Point(418, 502);
+            this.OkButton.Location = new System.Drawing.Point(395, 92);
             this.OkButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(82, 23);
@@ -740,6 +760,7 @@
             // TranslationQualityAssessment
             // 
             this.TranslationQualityAssessment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TranslationQualityAssessment.Enabled = false;
             this.TranslationQualityAssessment.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TranslationQualityAssessment.FormattingEnabled = true;
             this.TranslationQualityAssessment.Items.AddRange(new object[] {
@@ -758,6 +779,7 @@
             // matchRepairBox
             // 
             this.matchRepairBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.matchRepairBox.Enabled = false;
             this.matchRepairBox.FormattingEnabled = true;
             this.matchRepairBox.Items.AddRange(new object[] {
             "Keep",
@@ -773,22 +795,24 @@
             // 
             // ShowToolTips
             // 
-            this.ShowToolTips.Location = new System.Drawing.Point(12, 503);
+            this.ShowToolTips.Location = new System.Drawing.Point(12, 538);
             this.ShowToolTips.Name = "ShowToolTips";
             this.ShowToolTips.Size = new System.Drawing.Size(257, 23);
             this.ShowToolTips.TabIndex = 7;
             this.ShowToolTips.Text = "Show ToolTips";
             this.ShowToolTips.UseVisualStyleBackColor = true;
+            this.ShowToolTips.Visible = false;
             this.ShowToolTips.CheckedChanged += new System.EventHandler(this.ShowToolTips_CheckedChanged);
             // 
             // AboutButton
             // 
-            this.AboutButton.Location = new System.Drawing.Point(330, 501);
+            this.AboutButton.Location = new System.Drawing.Point(307, 91);
             this.AboutButton.Name = "AboutButton";
             this.AboutButton.Size = new System.Drawing.Size(82, 23);
             this.AboutButton.TabIndex = 8;
             this.AboutButton.Text = "Help";
             this.AboutButton.UseVisualStyleBackColor = true;
+            this.AboutButton.Visible = false;
             this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
             // 
             // QualityGroup
@@ -796,7 +820,7 @@
             this.QualityGroup.Controls.Add(this.TranslationQualityAssessmentLabel);
             this.QualityGroup.Controls.Add(this.TranslationQualityAssessment);
             this.QualityGroup.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.QualityGroup.Location = new System.Drawing.Point(12, 375);
+            this.QualityGroup.Location = new System.Drawing.Point(12, 410);
             this.QualityGroup.Name = "QualityGroup";
             this.QualityGroup.Size = new System.Drawing.Size(285, 55);
             this.QualityGroup.TabIndex = 4;
@@ -819,7 +843,7 @@
             this.matchRepairGroupBox.Controls.Add(this.matchRepairBox);
             this.matchRepairGroupBox.Controls.Add(this.matchRepLabel);
             this.matchRepairGroupBox.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.matchRepairGroupBox.Location = new System.Drawing.Point(13, 437);
+            this.matchRepairGroupBox.Location = new System.Drawing.Point(13, 472);
             this.matchRepairGroupBox.Name = "matchRepairGroupBox";
             this.matchRepairGroupBox.Size = new System.Drawing.Size(284, 60);
             this.matchRepairGroupBox.TabIndex = 11;
@@ -836,19 +860,26 @@
             this.matchRepLabel.TabIndex = 0;
             this.matchRepLabel.Text = "Match repair";
             // 
+            // ShowSettings
+            // 
+            this.ShowSettings.Location = new System.Drawing.Point(6, 91);
+            this.ShowSettings.Name = "ShowSettings";
+            this.ShowSettings.Size = new System.Drawing.Size(257, 23);
+            this.ShowSettings.TabIndex = 12;
+            this.ShowSettings.Text = "Show Settings";
+            this.ShowSettings.UseVisualStyleBackColor = true;
+            this.ShowSettings.CheckedChanged += new System.EventHandler(this.showSettings_CheckedChanged);
+            // 
             // ApplyTemplateForm
             // 
             this.AcceptButton = this.OkButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.DismissButton;
-            this.ClientSize = new System.Drawing.Size(609, 538);
+            this.ClientSize = new System.Drawing.Size(609, 564);
             this.Controls.Add(this.matchRepairGroupBox);
             this.Controls.Add(this.QualityGroup);
             this.Controls.Add(this.ShowToolTips);
-            this.Controls.Add(this.AboutButton);
-            this.Controls.Add(this.DismissButton);
-            this.Controls.Add(this.OkButton);
             this.Controls.Add(this.TemplateGroup);
             this.Controls.Add(this.VerificationGroup);
             this.Controls.Add(this.BatchProcessingGroup);
@@ -927,5 +958,6 @@
 		private System.Windows.Forms.Label matchRepLabel;
 		private System.Windows.Forms.ComboBox VerificationSpecificLanguages;
 		private System.Windows.Forms.Label VerificationSpecificLanguagesLabel;
-	}
+        private System.Windows.Forms.CheckBox ShowSettings;
+    }
 }

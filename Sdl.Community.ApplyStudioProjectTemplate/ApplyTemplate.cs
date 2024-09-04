@@ -33,23 +33,42 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 	        FileLocation = sourceXml.SelectSingleNode("@location")?.Value;
 	        Uri = null;
 	        Id = new Guid(sourceXml.SelectSingleNode("@id").Value);
-	        TranslationProvidersAllLanguages = GetApplyTemplateOptions(sourceXml, "tpal");
-	        TranslationProvidersSpecificLanguages = GetApplyTemplateOptions(sourceXml, "tpsl");
-	        TranslationMemoriesAllLanguages = GetApplyTemplateOptions(sourceXml, "tmal");
-	        TranslationMemoriesSpecificLanguages = GetApplyTemplateOptions(sourceXml, "tmsl");
-	        TerminologyTermbases = GetApplyTemplateOptions(sourceXml, "tbtb");
-	        TerminologySearchSettings = GetApplyTemplateOptions(sourceXml, "tbss");
-	        TranslationQualityAssessment = GetApplyTemplateOptions(sourceXml, "tqa");
-	        VerificationQaChecker30 = GetApplyTemplateOptions(sourceXml, "qaqa");
-	        VerificationTagVerifier = GetApplyTemplateOptions(sourceXml, "qatg");
-	        VerificationTerminologyVerifier = GetApplyTemplateOptions(sourceXml, "qatv");
-	        VerificationNumberVerifier = GetApplyTemplateOptions(sourceXml, "qanv");
-	        VerificationGrammarChecker = GetApplyTemplateOptions(sourceXml, "qagc");
-	        BatchTasksAllLanguages = GetApplyTemplateOptions(sourceXml, "btal");
-	        BatchTasksSpecificLanguages = GetApplyTemplateOptions(sourceXml, "btsl");
-	        FileTypes = GetApplyTemplateOptions(sourceXml, "ftts");
-	        MatchRepairSettings = GetApplyTemplateOptions(sourceXml, "mrs");
-	        VerificationSpecificLanguages = GetApplyTemplateOptions(sourceXml, "vsl");
+            //TranslationProvidersAllLanguages = GetApplyTemplateOptions(sourceXml, "tpal");
+	        //TranslationProvidersSpecificLanguages = GetApplyTemplateOptions(sourceXml, "tpsl");
+	        //TranslationMemoriesAllLanguages = GetApplyTemplateOptions(sourceXml, "tmal");
+	        //TranslationMemoriesSpecificLanguages = GetApplyTemplateOptions(sourceXml, "tmsl");
+	        //TerminologyTermbases = GetApplyTemplateOptions(sourceXml, "tbtb");
+	        //TerminologySearchSettings = GetApplyTemplateOptions(sourceXml, "tbss");
+	        //TranslationQualityAssessment = GetApplyTemplateOptions(sourceXml, "tqa");
+	        //VerificationQaChecker30 = GetApplyTemplateOptions(sourceXml, "qaqa");
+	        //VerificationTagVerifier = GetApplyTemplateOptions(sourceXml, "qatg");
+	        //VerificationTerminologyVerifier = GetApplyTemplateOptions(sourceXml, "qatv");
+	        //VerificationNumberVerifier = GetApplyTemplateOptions(sourceXml, "qanv");
+	        //VerificationGrammarChecker = GetApplyTemplateOptions(sourceXml, "qagc");
+	        //BatchTasksAllLanguages = GetApplyTemplateOptions(sourceXml, "btal");
+	        //BatchTasksSpecificLanguages = GetApplyTemplateOptions(sourceXml, "btsl");
+	        //FileTypes = GetApplyTemplateOptions(sourceXml, "ftts");
+	        //MatchRepairSettings = GetApplyTemplateOptions(sourceXml, "mrs");
+	        //VerificationSpecificLanguages = GetApplyTemplateOptions(sourceXml, "vsl");
+
+            TranslationProvidersAllLanguages = ApplyTemplateOptions.Merge;
+            TranslationProvidersSpecificLanguages = ApplyTemplateOptions.Merge;
+            TranslationMemoriesAllLanguages = ApplyTemplateOptions.Keep;
+            TranslationMemoriesSpecificLanguages = ApplyTemplateOptions.Keep;
+            TerminologyTermbases = ApplyTemplateOptions.Merge;
+            TerminologySearchSettings = ApplyTemplateOptions.Keep;
+            TranslationQualityAssessment = ApplyTemplateOptions.Keep;
+            VerificationQaChecker30 = ApplyTemplateOptions.Keep;
+            VerificationTagVerifier = ApplyTemplateOptions.Keep;
+            VerificationTerminologyVerifier = ApplyTemplateOptions.Keep;
+            VerificationNumberVerifier = ApplyTemplateOptions.Keep;
+            VerificationGrammarChecker = ApplyTemplateOptions.Keep;
+            BatchTasksAllLanguages = ApplyTemplateOptions.Keep;
+            BatchTasksSpecificLanguages = ApplyTemplateOptions.Keep;
+            FileTypes = ApplyTemplateOptions.Keep;
+            MatchRepairSettings = ApplyTemplateOptions.Keep;
+            VerificationSpecificLanguages = ApplyTemplateOptions.Keep;
+
         }
 
         /// <summary>
