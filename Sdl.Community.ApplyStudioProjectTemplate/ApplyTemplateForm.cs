@@ -226,7 +226,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 			
 			if (selectedTemplate != null)
 			{
-				TranslationProvidersAllLanguages.SelectedItem = selectedTemplate.TranslationProvidersAllLanguages.ToString();
+				TranslationProvidersAllLanguages1.SelectedItem = selectedTemplate.TranslationProvidersAllLanguages.ToString();
 				TranslationProvidersSpecificLanguages.SelectedItem = selectedTemplate.TranslationProvidersSpecificLanguages.ToString();
 				TranslationMemoriesAllLanguages.SelectedItem = selectedTemplate.TranslationMemoriesAllLanguages.ToString();
 				TranslationMemoriesSpecificLanguages.SelectedItem = selectedTemplate.TranslationMemoriesSpecificLanguages.ToString();
@@ -259,7 +259,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 			}
 			else
 			{
-				var sumOfSelected = TranslationProvidersAllLanguages.SelectedIndex +
+				var sumOfSelected = TranslationProvidersAllLanguages1.SelectedIndex +
 									TranslationProvidersSpecificLanguages.SelectedIndex +
 									TranslationMemoriesAllLanguages.SelectedIndex +
 									TranslationMemoriesSpecificLanguages.SelectedIndex +
@@ -275,7 +275,8 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 									matchRepairBox.SelectedIndex +
 									FileTypes.SelectedIndex +
 									VerificationSpecificLanguages.SelectedIndex;
-				OkButton.Enabled = sumOfSelected > 0;
+				// OkButton.Enabled = sumOfSelected > 0;
+				OkButton.Enabled = true;
 			}
 		}
 
@@ -290,7 +291,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 			{
 				applyTemplate.TranslationProvidersAllLanguages =
 					(ApplyTemplateOptions)Enum.Parse(typeof(ApplyTemplateOptions),
-						TranslationProvidersAllLanguages.SelectedItem.ToString());
+						TranslationProvidersAllLanguages1.SelectedItem.ToString());
 			}
 			CheckChanged();
 		}
@@ -675,6 +676,11 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 		}
 
         private void ApplyToLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TranslationProvidersAllLanguages_TextChanged(object sender, EventArgs e)
         {
 
         }

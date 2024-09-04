@@ -75,6 +75,53 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 					return;
 				}
 
+				// -- Translation Memory and Automated Translation --
+				// All language pairs
+				//applyTemplateForm.ActiveTemplate.;
+				var translationProvidersAllLanguages = (ApplyTemplateOptions)Enum.Parse(typeof(ApplyTemplateOptions), selectedTemplate.TranslationProvidersAllLanguages.ToString(), true);
+				MessageBox.Show($"Value of translation providers all languages: Before parsing {selectedTemplate.TranslationProvidersAllLanguages} and after {translationProvidersAllLanguages}");
+				//var translationProvidersAllLanguages = ApplyTemplateOptions.Merge;
+				// Specific languages pairs
+				var translationProvidersSpecificLanguages = ApplyTemplateOptions.Merge;
+				// -- Translation Memory settings --
+				// All language pairs
+				var translationMemoriesAllLanguages = ApplyTemplateOptions.Keep;
+				// Specific language pairs
+				var translationMemoriesSpecificLanguages = ApplyTemplateOptions.Keep;
+				// -- Terminology --
+				// Termbases
+				var terminologyTermbases = ApplyTemplateOptions.Merge;
+				// Search settings
+				var terminologySearchSettings = ApplyTemplateOptions.Keep;
+				// -- Quality --
+				// Translation Quality Assessment
+				var translationQualityAssessment = ApplyTemplateOptions.Keep;
+				// -- Match Repair settings --
+				// Match repair
+				var matchRepairBox = ApplyTemplateOptions.Keep;
+				// -- Batch Processing and File Types --
+				// All language pairs
+				var batchTasksAllLanguages = ApplyTemplateOptions.Keep;
+				// Specific language pairs
+				var batchTasksSpecificLanguages = ApplyTemplateOptions.Keep;
+				// Files types
+				var filesTypes = ApplyTemplateOptions.Keep;
+				// -- Verification --
+				// QA Checker 3.0
+				var verificationQaChecker30 = ApplyTemplateOptions.Keep;
+				// Tag Verifier
+				var verificationTagVerifier = ApplyTemplateOptions.Keep;
+				// Terminology Verifier
+				var verificationTerminologyVerifier = ApplyTemplateOptions.Keep;
+				// Number Verifier
+				var verificationNumberVerifier = ApplyTemplateOptions.Keep;
+				// Grammar Checker
+				var verificationGrammarChecker = ApplyTemplateOptions.Keep;
+				// Specific languages pairs
+				var verificationSpecificLanguages = ApplyTemplateOptions.Keep;
+				// -- Show ToolTips --
+				var showToolTips = 0;
+
 				// Work through all projects
 				var projectsList = new StringBuilder();
 				projectsList.AppendLine(PluginResources.Settings_Applied);
@@ -130,7 +177,8 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 					var sourceProjectInfo = sourceProject.GetProjectInfo();
 					var sourceSettingsBundle = sourceProject.GetSettings();
 
-					if (selectedTemplate.VerificationSpecificLanguages == ApplyTemplateOptions.Overwrite)
+					//if (selectedTemplate.VerificationSpecificLanguages == ApplyTemplateOptions.Overwrite)
+					if (verificationSpecificLanguages == ApplyTemplateOptions.Overwrite)
 					{
 						// Copy verification settings
 						if (sourceProjectInfo.SourceLanguage.Equals(targetProjectInfo.SourceLanguage))
@@ -158,13 +206,15 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 					}
 
 					// Copy all languages translation providers
-					if (selectedTemplate.TranslationProvidersAllLanguages != ApplyTemplateOptions.Keep)
+					//if (selectedTemplate.TranslationProvidersAllLanguages != ApplyTemplateOptions.Keep)
+					if (translationProvidersAllLanguages != ApplyTemplateOptions.Keep)
 					{
 						try
 						{
 							// Update the "all languages" node
 							TranslationProviderConfiguration sourceProviderConfig = sourceProject.GetTranslationProviderConfiguration();
-							if (selectedTemplate.TranslationProvidersAllLanguages == ApplyTemplateOptions.Merge)
+							//if (selectedTemplate.TranslationProvidersAllLanguages == ApplyTemplateOptions.Merge)
+							if (translationProvidersAllLanguages == ApplyTemplateOptions.Merge)
 							{
 								TranslationProviderConfiguration targetProviderConfig = targetProject.GetTranslationProviderConfiguration();
 								MergeTranslationProviders(sourceProviderConfig, targetProviderConfig);

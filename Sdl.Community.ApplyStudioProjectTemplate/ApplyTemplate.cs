@@ -33,8 +33,9 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 	        FileLocation = sourceXml.SelectSingleNode("@location")?.Value;
 	        Uri = null;
 	        Id = new Guid(sourceXml.SelectSingleNode("@id").Value);
-	        TranslationProvidersAllLanguages = GetApplyTemplateOptions(sourceXml, "tpal");
-	        TranslationProvidersSpecificLanguages = GetApplyTemplateOptions(sourceXml, "tpsl");
+            // TranslationProvidersAllLanguages = GetApplyTemplateOptions(sourceXml, "tpal");
+            TranslationProvidersAllLanguages = ApplyTemplateOptions.Merge;
+            TranslationProvidersSpecificLanguages = GetApplyTemplateOptions(sourceXml, "tpsl");
 	        TranslationMemoriesAllLanguages = GetApplyTemplateOptions(sourceXml, "tmal");
 	        TranslationMemoriesSpecificLanguages = GetApplyTemplateOptions(sourceXml, "tmsl");
 	        TerminologyTermbases = GetApplyTemplateOptions(sourceXml, "tbtb");
@@ -50,6 +51,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 	        FileTypes = GetApplyTemplateOptions(sourceXml, "ftts");
 	        MatchRepairSettings = GetApplyTemplateOptions(sourceXml, "mrs");
 	        VerificationSpecificLanguages = GetApplyTemplateOptions(sourceXml, "vsl");
+
         }
 
         /// <summary>

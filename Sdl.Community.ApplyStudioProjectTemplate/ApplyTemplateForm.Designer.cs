@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplyTemplateForm));
             this.TranslationProvidersGroup = new System.Windows.Forms.GroupBox();
+            this.TranslationProvidersAllLanguages = new System.Windows.Forms.TextBox();
             this.TranslationProviderSpecificLanguagesLabel = new System.Windows.Forms.Label();
             this.TranslationProvidersSpecificLanguages = new System.Windows.Forms.ComboBox();
             this.TranslationProviderAllLanguagesLabel = new System.Windows.Forms.Label();
-            this.TranslationProvidersAllLanguages = new System.Windows.Forms.ComboBox();
             this.TranslationMemoriesGroup = new System.Windows.Forms.GroupBox();
             this.TranslationMemoriesSpecificLanguagesLabel = new System.Windows.Forms.Label();
             this.TranslationMemoriesSpecificLanguages = new System.Windows.Forms.ComboBox();
@@ -50,6 +50,7 @@
             this.BatchTasksSpecificLanguagesLabel = new System.Windows.Forms.Label();
             this.FileTypes = new System.Windows.Forms.ComboBox();
             this.BatchTasksSpecificLanguages = new System.Windows.Forms.ComboBox();
+            this.TranslationProvidersAllLanguages1 = new System.Windows.Forms.ComboBox();
             this.BatchTasksAllLanguagesLabel = new System.Windows.Forms.Label();
             this.BatchTasksAllLanguages = new System.Windows.Forms.ComboBox();
             this.VerificationGroup = new System.Windows.Forms.GroupBox();
@@ -94,10 +95,10 @@
             // 
             // TranslationProvidersGroup
             // 
+            this.TranslationProvidersGroup.Controls.Add(this.TranslationProvidersAllLanguages);
             this.TranslationProvidersGroup.Controls.Add(this.TranslationProviderSpecificLanguagesLabel);
             this.TranslationProvidersGroup.Controls.Add(this.TranslationProvidersSpecificLanguages);
             this.TranslationProvidersGroup.Controls.Add(this.TranslationProviderAllLanguagesLabel);
-            this.TranslationProvidersGroup.Controls.Add(this.TranslationProvidersAllLanguages);
             this.TranslationProvidersGroup.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.TranslationProvidersGroup.Location = new System.Drawing.Point(12, 105);
             this.TranslationProvidersGroup.Name = "TranslationProvidersGroup";
@@ -105,6 +106,19 @@
             this.TranslationProvidersGroup.TabIndex = 1;
             this.TranslationProvidersGroup.TabStop = false;
             this.TranslationProvidersGroup.Text = "Translation Memory and Automated Translation";
+            // 
+            // TranslationProvidersAllLanguages
+            // 
+            this.TranslationProvidersAllLanguages.BackColor = System.Drawing.SystemColors.Window;
+            this.TranslationProvidersAllLanguages.Cursor = System.Windows.Forms.Cursors.Default;
+            this.TranslationProvidersAllLanguages.Location = new System.Drawing.Point(194, 26);
+            this.TranslationProvidersAllLanguages.Name = "TranslationProvidersAllLanguages";
+            this.TranslationProvidersAllLanguages.ReadOnly = true;
+            this.TranslationProvidersAllLanguages.Size = new System.Drawing.Size(80, 20);
+            this.TranslationProvidersAllLanguages.TabIndex = 6;
+            this.TranslationProvidersAllLanguages.Tag = "Translation Providers All Languages";
+            this.TranslationProvidersAllLanguages.Text = "COCO";
+            this.TranslationProvidersAllLanguages.TextChanged += new System.EventHandler(this.TranslationProvidersAllLanguages_TextChanged);
             // 
             // TranslationProviderSpecificLanguagesLabel
             // 
@@ -147,26 +161,6 @@
             this.TranslationProviderAllLanguagesLabel.TabIndex = 0;
             this.TranslationProviderAllLanguagesLabel.Text = "All language pairs";
             this.TranslationProviderAllLanguagesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // TranslationProvidersAllLanguages
-            // 
-            this.TranslationProvidersAllLanguages.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TranslationProvidersAllLanguages.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TranslationProvidersAllLanguages.FormattingEnabled = true;
-            this.TranslationProvidersAllLanguages.Items.AddRange(new object[] {
-            "Keep",
-            "Merge",
-            "Overwrite"});
-            this.TranslationProvidersAllLanguages.Location = new System.Drawing.Point(194, 26);
-            this.TranslationProvidersAllLanguages.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.TranslationProvidersAllLanguages.Name = "TranslationProvidersAllLanguages";
-            this.TranslationProvidersAllLanguages.Size = new System.Drawing.Size(80, 21);
-            this.TranslationProvidersAllLanguages.TabIndex = 1;
-            this.TranslationProvidersAllLanguages.Tag = "Translation Providers All Languages";
-            this.FormToolTip.SetToolTip(this.TranslationProvidersAllLanguages, "Select the behaviour for applying the Translation Provider settings to all langua" +
-        "ge pairs");
-            this.TranslationProvidersAllLanguages.SelectedIndexChanged += new System.EventHandler(this.TranslationProvidersAllLanguages_SelectedIndexChanged);
-            this.TranslationProvidersAllLanguages.MouseEnter += new System.EventHandler(this.ControlMouseEnter);
             // 
             // TranslationMemoriesGroup
             // 
@@ -321,6 +315,7 @@
             this.BatchProcessingGroup.Controls.Add(this.BatchTasksSpecificLanguagesLabel);
             this.BatchProcessingGroup.Controls.Add(this.FileTypes);
             this.BatchProcessingGroup.Controls.Add(this.BatchTasksSpecificLanguages);
+            this.BatchProcessingGroup.Controls.Add(this.TranslationProvidersAllLanguages1);
             this.BatchProcessingGroup.Controls.Add(this.BatchTasksAllLanguagesLabel);
             this.BatchProcessingGroup.Controls.Add(this.BatchTasksAllLanguages);
             this.BatchProcessingGroup.ForeColor = System.Drawing.SystemColors.HotTrack;
@@ -389,6 +384,26 @@
         "age pairs");
             this.BatchTasksSpecificLanguages.SelectedIndexChanged += new System.EventHandler(this.BatchTasksSpecificLanguages_SelectedIndexChanged);
             this.BatchTasksSpecificLanguages.MouseEnter += new System.EventHandler(this.ControlMouseEnter);
+            // 
+            // TranslationProvidersAllLanguages1
+            // 
+            this.TranslationProvidersAllLanguages1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TranslationProvidersAllLanguages1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TranslationProvidersAllLanguages1.FormattingEnabled = true;
+            this.TranslationProvidersAllLanguages1.Items.AddRange(new object[] {
+            "Keep",
+            "Merge",
+            "Overwrite"});
+            this.TranslationProvidersAllLanguages1.Location = new System.Drawing.Point(27, 116);
+            this.TranslationProvidersAllLanguages1.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
+            this.TranslationProvidersAllLanguages1.Name = "TranslationProvidersAllLanguages1";
+            this.TranslationProvidersAllLanguages1.Size = new System.Drawing.Size(80, 21);
+            this.TranslationProvidersAllLanguages1.TabIndex = 1;
+            this.TranslationProvidersAllLanguages1.Tag = "Translation Providers All Languages";
+            this.FormToolTip.SetToolTip(this.TranslationProvidersAllLanguages1, "Select the behaviour for applying the Translation Provider settings to all langua" +
+        "ge pairs");
+            this.TranslationProvidersAllLanguages1.SelectedIndexChanged += new System.EventHandler(this.TranslationProvidersAllLanguages_SelectedIndexChanged);
+            this.TranslationProvidersAllLanguages1.MouseEnter += new System.EventHandler(this.ControlMouseEnter);
             // 
             // BatchTasksAllLanguagesLabel
             // 
@@ -861,6 +876,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Apply Studio Project Template Simplified";
             this.TranslationProvidersGroup.ResumeLayout(false);
+            this.TranslationProvidersGroup.PerformLayout();
             this.TranslationMemoriesGroup.ResumeLayout(false);
             this.TerminologyGroup.ResumeLayout(false);
             this.BatchProcessingGroup.ResumeLayout(false);
@@ -879,7 +895,6 @@
         private System.Windows.Forms.Label TranslationProviderSpecificLanguagesLabel;
         private System.Windows.Forms.ComboBox TranslationProvidersSpecificLanguages;
         private System.Windows.Forms.Label TranslationProviderAllLanguagesLabel;
-        private System.Windows.Forms.ComboBox TranslationProvidersAllLanguages;
         private System.Windows.Forms.GroupBox TranslationMemoriesGroup;
         private System.Windows.Forms.Label TranslationMemoriesSpecificLanguagesLabel;
         private System.Windows.Forms.ComboBox TranslationMemoriesSpecificLanguages;
@@ -927,5 +942,7 @@
 		private System.Windows.Forms.Label matchRepLabel;
 		private System.Windows.Forms.ComboBox VerificationSpecificLanguages;
 		private System.Windows.Forms.Label VerificationSpecificLanguagesLabel;
-	}
+        private System.Windows.Forms.TextBox TranslationProvidersAllLanguages;
+        private System.Windows.Forms.ComboBox TranslationProvidersAllLanguages1;
+    }
 }
