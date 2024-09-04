@@ -68,21 +68,21 @@
             this.ApplyToLabel = new System.Windows.Forms.Label();
             this.ApplyTo = new System.Windows.Forms.ComboBox();
             this.TemplateGroup = new System.Windows.Forms.GroupBox();
+            this.ShowSettings = new System.Windows.Forms.CheckBox();
             this.SelectedTemplateLabel = new System.Windows.Forms.Label();
             this.SelectedTemplate = new System.Windows.Forms.ComboBox();
-            this.EditTemplatesButton = new System.Windows.Forms.Button();
+            this.AboutButton = new System.Windows.Forms.Button();
             this.DismissButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
+            this.EditTemplatesButton = new System.Windows.Forms.Button();
             this.FormToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TranslationQualityAssessment = new System.Windows.Forms.ComboBox();
             this.matchRepairBox = new System.Windows.Forms.ComboBox();
             this.ShowToolTips = new System.Windows.Forms.CheckBox();
-            this.AboutButton = new System.Windows.Forms.Button();
             this.QualityGroup = new System.Windows.Forms.GroupBox();
             this.TranslationQualityAssessmentLabel = new System.Windows.Forms.Label();
             this.matchRepairGroupBox = new System.Windows.Forms.GroupBox();
             this.matchRepLabel = new System.Windows.Forms.Label();
-            this.ShowSettings = new System.Windows.Forms.CheckBox();
             this.TranslationProvidersGroup.SuspendLayout();
             this.TranslationMemoriesGroup.SuspendLayout();
             this.TerminologyGroup.SuspendLayout();
@@ -683,6 +683,16 @@
             this.TemplateGroup.TabStop = false;
             this.TemplateGroup.Text = "Template to apply";
             // 
+            // ShowSettings
+            // 
+            this.ShowSettings.Location = new System.Drawing.Point(6, 91);
+            this.ShowSettings.Name = "ShowSettings";
+            this.ShowSettings.Size = new System.Drawing.Size(257, 23);
+            this.ShowSettings.TabIndex = 12;
+            this.ShowSettings.Text = "Show Settings";
+            this.ShowSettings.UseVisualStyleBackColor = true;
+            this.ShowSettings.CheckedChanged += new System.EventHandler(this.showSettings_CheckedChanged);
+            // 
             // SelectedTemplateLabel
             // 
             this.SelectedTemplateLabel.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -711,20 +721,15 @@
             this.SelectedTemplate.SelectedIndexChanged += new System.EventHandler(this.SelectedTemplate_SelectedIndexChanged);
             this.SelectedTemplate.MouseEnter += new System.EventHandler(this.ControlMouseEnter);
             // 
-            // EditTemplatesButton
+            // AboutButton
             // 
-            this.EditTemplatesButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.EditTemplatesButton.Location = new System.Drawing.Point(485, 18);
-            this.EditTemplatesButton.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.EditTemplatesButton.Name = "EditTemplatesButton";
-            this.EditTemplatesButton.Size = new System.Drawing.Size(80, 23);
-            this.EditTemplatesButton.TabIndex = 2;
-            this.EditTemplatesButton.Tag = "Templates...";
-            this.EditTemplatesButton.Text = "&Templates...";
-            this.FormToolTip.SetToolTip(this.EditTemplatesButton, "Edit the list of available templates");
-            this.EditTemplatesButton.UseVisualStyleBackColor = true;
-            this.EditTemplatesButton.Click += new System.EventHandler(this.EditTemplatesButton_Click);
-            this.EditTemplatesButton.MouseEnter += new System.EventHandler(this.ControlMouseEnter);
+            this.AboutButton.Location = new System.Drawing.Point(307, 91);
+            this.AboutButton.Name = "AboutButton";
+            this.AboutButton.Size = new System.Drawing.Size(82, 23);
+            this.AboutButton.TabIndex = 8;
+            this.AboutButton.Text = "Help";
+            this.AboutButton.UseVisualStyleBackColor = true;
+            this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
             // 
             // DismissButton
             // 
@@ -748,6 +753,21 @@
             this.OkButton.Text = "OK";
             this.OkButton.UseVisualStyleBackColor = true;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
+            // 
+            // EditTemplatesButton
+            // 
+            this.EditTemplatesButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.EditTemplatesButton.Location = new System.Drawing.Point(485, 18);
+            this.EditTemplatesButton.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
+            this.EditTemplatesButton.Name = "EditTemplatesButton";
+            this.EditTemplatesButton.Size = new System.Drawing.Size(80, 23);
+            this.EditTemplatesButton.TabIndex = 2;
+            this.EditTemplatesButton.Tag = "Templates...";
+            this.EditTemplatesButton.Text = "&Templates...";
+            this.FormToolTip.SetToolTip(this.EditTemplatesButton, "Edit the list of available templates");
+            this.EditTemplatesButton.UseVisualStyleBackColor = true;
+            this.EditTemplatesButton.Click += new System.EventHandler(this.EditTemplatesButton_Click);
+            this.EditTemplatesButton.MouseEnter += new System.EventHandler(this.ControlMouseEnter);
             // 
             // FormToolTip
             // 
@@ -804,17 +824,6 @@
             this.ShowToolTips.Visible = false;
             this.ShowToolTips.CheckedChanged += new System.EventHandler(this.ShowToolTips_CheckedChanged);
             // 
-            // AboutButton
-            // 
-            this.AboutButton.Location = new System.Drawing.Point(307, 91);
-            this.AboutButton.Name = "AboutButton";
-            this.AboutButton.Size = new System.Drawing.Size(82, 23);
-            this.AboutButton.TabIndex = 8;
-            this.AboutButton.Text = "Help";
-            this.AboutButton.UseVisualStyleBackColor = true;
-            this.AboutButton.Visible = false;
-            this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
-            // 
             // QualityGroup
             // 
             this.QualityGroup.Controls.Add(this.TranslationQualityAssessmentLabel);
@@ -859,16 +868,6 @@
             this.matchRepLabel.Size = new System.Drawing.Size(66, 13);
             this.matchRepLabel.TabIndex = 0;
             this.matchRepLabel.Text = "Match repair";
-            // 
-            // ShowSettings
-            // 
-            this.ShowSettings.Location = new System.Drawing.Point(6, 91);
-            this.ShowSettings.Name = "ShowSettings";
-            this.ShowSettings.Size = new System.Drawing.Size(257, 23);
-            this.ShowSettings.TabIndex = 12;
-            this.ShowSettings.Text = "Show Settings";
-            this.ShowSettings.UseVisualStyleBackColor = true;
-            this.ShowSettings.CheckedChanged += new System.EventHandler(this.showSettings_CheckedChanged);
             // 
             // ApplyTemplateForm
             // 

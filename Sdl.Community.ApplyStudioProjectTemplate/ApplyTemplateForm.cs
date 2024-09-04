@@ -641,7 +641,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 		/// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
 		private void AboutButton_Click(object sender, EventArgs e)
 		{
-			Process.Start("https://community.sdl.com/product-groups/translationproductivity/w/customer-experience/3157.apply-studio-project-template");
+			Process.Start("https://github.com/damdamo/ApplyStudioProjectTemplateSimplified");
 		}
 
 		private void matchRepairBox_MouseEnter(object sender, EventArgs e)

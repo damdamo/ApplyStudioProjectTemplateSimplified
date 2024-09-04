@@ -23,7 +23,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 	/// <summary>
 	/// The action for applying a studio project template
 	/// </summary>
-	[Action("ApplyStudioProjectTemplateAction", Icon = "ASPT", Name = "Apply Studio Project Template", Description = "Applies settings from a project template to the current project")]
+	[Action("ApplyStudioProjectTemplateAction", Icon = "ASPT", Name = "Apply Studio Project Template Simplified", Description = "Applies settings from a project template to the current project")]
 	[ActionLayout(typeof(ApplyStudioProjectTemplateRibbonGroup), 10, DisplayType.Large)]
 	[ActionLayout(typeof(TranslationStudioDefaultContextMenus.ProjectsContextMenuLocation), 10, DisplayType.Large)]
 	[Shortcut(Keys.Control | Keys.Alt | Keys.T)]
