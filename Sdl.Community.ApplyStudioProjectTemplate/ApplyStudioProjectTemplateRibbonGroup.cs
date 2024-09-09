@@ -7,7 +7,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
     /// <summary>
     /// The ribbon group where we will put our icon
     /// </summary>
-    [RibbonGroup("ApplyStudioProjectTemplateRibbonGroup", Name = "Apply Project Template Simplified")]
+    [RibbonGroup("ApplyStudioProjectTemplateSimplifiedRibbonGroup", Name = "Apply Project Template Simplified")]
     [RibbonGroupLayout(LocationByType = typeof(StudioDefaultRibbonTabs.AddinsRibbonTabLocation))]
     public class ApplyStudioProjectTemplateRibbonGroup : AbstractRibbonGroup
     {
