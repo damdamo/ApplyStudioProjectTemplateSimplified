@@ -23,7 +23,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 	/// <summary>
 	/// The action for applying a studio project template
 	/// </summary>
-	[Action("ApplyStudioProjectTemplateAction", Icon = "ASPT", Name = "Apply Studio Project Template Simplified", Description = "Applies settings from a project template to the current project")]
+	[Action("ApplyStudioProjectTemplateSimplifiedAction", Icon = "ASPT", Name = "Apply Studio Project Template Simplified", Description = "Applies settings from a project template to the current project")]
 	[ActionLayout(typeof(ApplyStudioProjectTemplateRibbonGroup), 10, DisplayType.Large)]
 	[ActionLayout(typeof(TranslationStudioDefaultContextMenus.ProjectsContextMenuLocation), 10, DisplayType.Large)]
 	[Shortcut(Keys.Control | Keys.Alt | Keys.T)]
@@ -777,14 +777,14 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 		}
 	}
 
-	[Action("ApplyStudioProjectTemplateHelpAction", Icon = "question", Name = "Apply Studio Project Template Help", Description = "An wiki page will be opened in browser uith user documentation")]
+	[Action("ApplyStudioProjectTemplateSimplifiedHelpAction", Icon = "question", Name = "Apply Studio Project Template Simplified Help", Description = "A wiki page will be opened in browser uith user documentation")]
 	[ActionLayout(typeof(ApplyStudioProjectTemplateRibbonGroup), 10, DisplayType.Large)]
 	[ActionLayout(typeof(TranslationStudioDefaultContextMenus.ProjectsContextMenuLocation), 10, DisplayType.Large)]
 	public class ApplyStudioProjectTemplateHelpAction : AbstractViewControllerAction<ProjectsController>
 	{
 		protected override void Execute()
 		{
-			System.Diagnostics.Process.Start("https://community.sdl.com/product-groups/translationproductivity/w/customer-experience/3157.apply-studio-project-template");
+			System.Diagnostics.Process.Start("https://github.com/damdamo/ApplyStudioProjectTemplateSimplified");
 		}
 	}
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35130.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdl.Community.ApplyStudioProjectTemplate", "Sdl.Community.ApplyStudioProjectTemplate\Sdl.Community.ApplyStudioProjectTemplate.csproj", "{AE9FF782-821F-4D95-817E-85FC96A4AD23}"
 EndProject
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE12B52D-F203-4955-9EA1-F960F45885E0}
 	EndGlobalSection
 EndGlobal

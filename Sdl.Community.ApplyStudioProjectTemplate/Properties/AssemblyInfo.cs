@@ -11,11 +11,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Apply Studio Project Template")]
+[assembly: AssemblyTitle("Apply Studio Project Template Simplified")]
 [assembly: AssemblyDescription("This plug-in allows you to apply settings from a template (.sdltpl) or project (.sdlproj) to one or more projects in SDL Trados Studio 2017.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SDL plc")]
-[assembly: AssemblyProduct("Apply Studio Project Template")]
+[assembly: AssemblyProduct("Apply Studio Project Template Simplified")]
 [assembly: AssemblyCopyright("Copyright © 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -26,7 +26,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1a8c6383-b665-407f-9b2f-a2e5646e5943")]
+[assembly: Guid("d487ba6a-b256-4a25-9aaa-2ead2818b18d")]
 
 // Version information for an assembly consists of the following four values:
 //

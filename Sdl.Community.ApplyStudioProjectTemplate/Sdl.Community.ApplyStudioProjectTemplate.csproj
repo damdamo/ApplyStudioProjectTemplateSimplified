@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sdl.Community.ApplyStudioProjectTemplate</RootNamespace>
-    <AssemblyName>Sdl.Community.ApplyStudioProjectTemplate</AssemblyName>
+    <AssemblyName>ApplyStudioProjectTemplateSimplified</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -147,12 +147,14 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Resources\question.ico" />
+    <None Include="helloworld.snk" />
     <None Include="Resources\ASPT.ico" />
     <None Include="SdlCommunity.snk" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="EditApplyTemplates.resx">
       <DependentUpon>EditApplyTemplates.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PluginResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,9 +163,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplyTemplateForm.resx">
       <DependentUpon>ApplyTemplateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TermbaseWarningForm.resx">
       <DependentUpon>TermbaseWarningForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
