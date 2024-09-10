@@ -147,7 +147,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Resources\question.ico" />
-    <None Include="helloworld.snk" />
     <None Include="Resources\ASPT.ico" />
     <None Include="SdlCommunity.snk" />
   </ItemGroup>

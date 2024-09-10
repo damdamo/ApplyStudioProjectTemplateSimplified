@@ -684,11 +684,13 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
         {
 			if (this.ShowSettings.Checked)
 			{
-				this.Size = new System.Drawing.Size(625, 603);
+				SettingsGroup.Visible = true;
+				this.Size = new System.Drawing.Size(650, 650);
 			}
 			else
 			{
-				this.Size = new System.Drawing.Size(625, 180);
+				SettingsGroup.Visible = false;
+				this.Size = new System.Drawing.Size(650, 220);
 			}
 		}
     }
