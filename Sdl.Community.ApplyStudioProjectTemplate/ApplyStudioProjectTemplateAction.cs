@@ -18,6 +18,9 @@ using Sdl.TranslationStudioAutomation.IntegrationApi;
 using Sdl.TranslationStudioAutomation.IntegrationApi.Presentation.DefaultLocations;
 using Sdl.Verification.Api;
 
+using System.Xml;
+
+
 namespace Sdl.Community.ApplyStudioProjectTemplate
 {
 	/// <summary>
@@ -29,6 +32,39 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 	[Shortcut(Keys.Control | Keys.Alt | Keys.T)]
 	public class ApplyStudioProjectTemplateAction : AbstractViewControllerAction<ProjectsController>
 	{
+		static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
+		{
+			// Get information about the source directory
+			var dir = new DirectoryInfo(sourceDir);
+
+			// Check if the source directory exists
+			if (!dir.Exists)
+				throw new DirectoryNotFoundException($"Source directory not found: {dir.FullName}");
+
+			// Cache directories before we start copying
+			DirectoryInfo[] dirs = dir.GetDirectories();
+
+			// Create the destination directory
+			Directory.CreateDirectory(destinationDir);
+
+			// Get the files in the source directory and copy to the destination directory
+			foreach (FileInfo file in dir.GetFiles())
+			{
+				string targetFilePath = Path.Combine(destinationDir, file.Name);
+				file.CopyTo(targetFilePath);
+			}
+
+			// If recursive and copying subdirectories, recursively call this method
+			if (recursive)
+			{
+				foreach (DirectoryInfo subDir in dirs)
+				{
+					string newDestinationDir = Path.Combine(destinationDir, subDir.Name);
+					CopyDirectory(subDir.FullName, newDestinationDir, true);
+				}
+			}
+		}
+
 		/// <summary>
 		/// Executes this instance.
 		/// </summary>
@@ -78,6 +114,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 				// Work through all projects
 				var projectsList = new StringBuilder();
 				projectsList.AppendLine(PluginResources.Settings_Applied);
+
 				foreach (var targetProject in selectedProjects)
 				{
 					// Temporary folder path
@@ -269,7 +306,13 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 						var sourceTermbaseConfig = sourceProject.GetTermbaseConfiguration();
 						var targetTermbaseConfig = targetProject.GetTermbaseConfiguration();
 
-						if (selectedTemplate.TerminologyTermbases == ApplyTemplateOptions.Merge)
+                        //foreach (var termbase in targetProject.GetTermbaseConfiguration().Termbases)
+                        //{
+                        //    //termbase.SettingsXML = termbase.SettingsXML.Replace("v-sdl22.cwr.wto.org", "https://v-sdl22.cwr.wto.org/");
+                        //    MessageBox.Show($"XML: {termbase.SettingsXML}");
+                        //}
+
+                        if (selectedTemplate.TerminologyTermbases == ApplyTemplateOptions.Merge)
 						{
 							if (targetTermbaseConfig.TermbaseServerUri is null)
 							{
@@ -505,7 +548,40 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 					{
 						Console.Write(e);
 					}
-				}
+
+                    var filePath = $@"{targetProject.GetProjectInfo().LocalProjectFolder}/{targetProject.GetProjectInfo().Name}.sdlproj";
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.Load(filePath);
+
+                    // Convert XML to a string
+                    string xmlContent = xmlDoc.OuterXml;
+
+                    // Replace all occurrences of "toto" with "coco"
+                    xmlContent = xmlContent.Replace(@"v-sdl22.cwr.wto.org\%", @"https://v-sdl22.cwr.wto.org/\%");
+
+                    // Load the modified XML string back into the document
+                    xmlDoc.LoadXml(xmlContent);
+
+                    // Save the changes back to the file
+                    var sourceDir = targetProject.GetProjectInfo().LocalProjectFolder;
+					var sourceName = targetProject.GetProjectInfo().Name;
+					var targetDir = $@"C:/Temp/TempFolderSDLProjectCopy/Project";
+					var targetFile = $@"{targetDir}/{sourceName}.sdlproj";
+					var recursive = true;
+
+					if (Directory.Exists(targetDir))
+						Directory.Delete(targetDir, true);
+
+					CopyDirectory(sourceDir, targetDir, recursive);
+					xmlDoc.Save(targetFile);
+                    targetProject.Delete();
+					CopyDirectory(targetDir, sourceDir, recursive);
+
+					if (Directory.Exists(targetDir))
+						Directory.Delete(targetDir, true);
+
+					var x = new FileBasedProject($@"{sourceDir}/{sourceName}.sdlproj");
+                }
 				Controller.RefreshProjects();
 				// Tell the user we're done
 				MessageBox.Show(projectsList.ToString(), PluginResources.Plugin_Name, MessageBoxButtons.OK, MessageBoxIcon.Information);

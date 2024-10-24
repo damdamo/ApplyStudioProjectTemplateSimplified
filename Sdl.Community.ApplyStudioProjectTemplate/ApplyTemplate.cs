@@ -51,6 +51,7 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 	        //MatchRepairSettings = GetApplyTemplateOptions(sourceXml, "mrs");
 	        //VerificationSpecificLanguages = GetApplyTemplateOptions(sourceXml, "vsl");
 
+            // Modified parameters for pre-configuration here
             TranslationProvidersAllLanguages = ApplyTemplateOptions.Merge;
             TranslationProvidersSpecificLanguages = ApplyTemplateOptions.Merge;
             TranslationMemoriesAllLanguages = ApplyTemplateOptions.Keep;
@@ -58,16 +59,16 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
             TerminologyTermbases = ApplyTemplateOptions.Merge;
             TerminologySearchSettings = ApplyTemplateOptions.Keep;
             TranslationQualityAssessment = ApplyTemplateOptions.Keep;
-            VerificationQaChecker30 = ApplyTemplateOptions.Keep;
-            VerificationTagVerifier = ApplyTemplateOptions.Keep;
-            VerificationTerminologyVerifier = ApplyTemplateOptions.Keep;
-            VerificationNumberVerifier = ApplyTemplateOptions.Keep;
-            VerificationGrammarChecker = ApplyTemplateOptions.Keep;
+            VerificationQaChecker30 = ApplyTemplateOptions.Overwrite;
+            VerificationTagVerifier = ApplyTemplateOptions.Overwrite;
+            VerificationTerminologyVerifier = ApplyTemplateOptions.Overwrite;
+            VerificationNumberVerifier = ApplyTemplateOptions.Overwrite;
+            VerificationGrammarChecker = ApplyTemplateOptions.Overwrite;
             BatchTasksAllLanguages = ApplyTemplateOptions.Keep;
             BatchTasksSpecificLanguages = ApplyTemplateOptions.Keep;
             FileTypes = ApplyTemplateOptions.Keep;
             MatchRepairSettings = ApplyTemplateOptions.Keep;
-            VerificationSpecificLanguages = ApplyTemplateOptions.Keep;
+            VerificationSpecificLanguages = ApplyTemplateOptions.Overwrite;
 
         }
 
