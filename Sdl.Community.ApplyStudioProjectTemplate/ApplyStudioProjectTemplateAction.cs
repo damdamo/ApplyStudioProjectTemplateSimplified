@@ -575,6 +575,10 @@ namespace Sdl.Community.ApplyStudioProjectTemplate
 					CopyDirectory(sourceDir, targetDir, recursive);
 					xmlDoc.Save(targetFile);
                     targetProject.Delete();
+
+					if (!File.Exists(sourceDir))
+						Directory.CreateDirectory(sourceDir);
+
 					CopyDirectory(targetDir, sourceDir, recursive);
 
 					if (Directory.Exists(targetDir))
